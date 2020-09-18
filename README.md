@@ -12,7 +12,9 @@ startActivity(intent);
 ```
 <br><br>
 # test3  使用Intent隐式启动
-Intent隐式启动,掌握<intent-filter>写法，尤其是action,category等元素写法<br><br>
+隐式启动AnotherActivity<br>
+在隐式启动中，不需要明确指出要启动那个组件，仅是对要启动的组件提出要求，只要满足要求的组件就会被Android启动。<br>
+在配置文件中为activity设置<intent-filter>元素来设置要求。action来指定想要执行的动作名称。Category为Intent提供了一个附加的方法来表示组件能够被启动和执行
 ```
 <activity android:name=".AnotherActivity">
     <intent-filter>
@@ -26,6 +28,12 @@ Intent隐式启动,掌握<intent-filter>写法，尤其是action,category等元�
         <category android:name="android.intent.category.LAUNCHER" />
     </intent-filter>
 </activity>
+```
+使用intent隐式启动
+```
+    Intent intent = new Intent();
+    intent.setAction("startAnotherActivity");
+    startActivity(intent);
 ```
 <br><br>
 # test4  内部存储文件操作
